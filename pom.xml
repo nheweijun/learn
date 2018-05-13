@@ -1,0 +1,104 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.dci</groupId>
+  <artifactId>learn</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>jar</packaging>
+
+  <name>learn</name>
+  <url>http://maven.apache.org</url>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+  <dependencies>
+
+    <dependency>
+        <groupId>junit</groupId>
+        <artifactId>junit</artifactId>
+        <version>3.8.1</version>
+    </dependency>
+
+    <dependency>
+        <groupId>junit</groupId>
+        <artifactId>junit</artifactId>
+        <version>4.12</version>
+        <scope>test</scope>
+    </dependency>
+
+
+
+    <dependency>
+        <groupId>com.vividsolutions</groupId>
+        <artifactId>jts</artifactId>
+        <version>1.8</version>
+    </dependency>
+
+    <dependency>
+        <groupId>org.datasyslab</groupId>
+        <artifactId>geospark</artifactId>
+        <version>1.0.0</version>
+    </dependency>
+
+    <dependency>
+        <groupId>org.apache.spark</groupId>
+        <artifactId>spark-core_2.11</artifactId>
+        <version>2.1.0</version>
+        <scope>provided</scope>
+    </dependency>
+
+    <dependency>
+        <groupId>org.datasyslab</groupId>
+        <artifactId>geospark-viz</artifactId>
+        <version>1.0.0</version>
+    </dependency>
+
+
+  </dependencies>
+
+  <build>
+        <sourceDirectory>src/main/java</sourceDirectory>
+    <plugins>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.1</version>
+        <configuration>
+          <source>1.7</source>
+          <target>1.7</target>
+        </configuration>
+      </plugin>
+
+      <plugin>  
+          <groupId>org.apache.maven.plugins</groupId>  
+          <artifactId>maven-assembly-plugin</artifactId>  
+          <version>2.5.5</version>  
+          <configuration>  
+<!--                  <archive>  
+                  <manifest>  
+                      <mainClass>org.datasyslab.geosparkviz.ChoroplethmapTest</mainClass>  
+                  </manifest>  
+              </archive>   -->
+              <descriptorRefs>  
+                  <descriptorRef>jar-with-dependencies</descriptorRef>  
+              </descriptorRefs>  
+          </configuration>  
+
+          <executions>  
+              <execution>  
+                  <id>make-assembly</id>  
+                  <phase>package</phase>  
+                  <goals>  
+                      <goal>single</goal>  
+                  </goals>  
+              </execution>  
+          </executions>  
+          
+      </plugin>  
+    </plugins>  
+  </build>
+</project>
